@@ -12,9 +12,10 @@ const Nav = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Destinations', href: '/Add-destination' },
+    { name: 'Destinations', href: '/Destination' },
     { name: 'My Bookings', href: '/bookings' },
     { name: 'Admin', href: '/admin' },
+      { name: 'Destinations', href: '/Add-destination' }
   ]
 
   return (

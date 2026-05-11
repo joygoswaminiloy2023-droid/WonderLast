@@ -12,14 +12,22 @@ import {
 import React from "react";
 import { HiCheck, HiChevronDown } from "react-icons/hi";
 
-const page = () => {
-  const onsubmit = (e) => {
-    e.preventDefault();
+const page =() => {
+  const onsubmit = async (e) => {
+ e.preventDefault();
+ const data=new FormData(e.currentTarget)
 
-    const formData = new FormData(e.currentTarget);
-    const Des_data = Object.fromEntries(formData.entries());
+ const des_data=Object.fromEntries(data.entries())
+console.log(des_data);
 
-    console.log(Des_data);
+const res= await fetch('http://localhost:5000/destination',{
+method: 'POST',
+headers:{
+'content-type': 'application/json'
+},
+body: JSON.stringify(des_data)
+
+})
   };
 
   const inputClass =
