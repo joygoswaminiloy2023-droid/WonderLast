@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { HiOutlineCalendar, HiOutlineLocationMarker, HiStar } from 'react-icons/hi';
 import { HiArrowUpRight } from 'react-icons/hi2';
 
-const Card = ({destination}) => {
+const Card = ({destination,id}) => {
     return (
 
     <div className="bg-white rounded-lg overflow-hidden group w-full max-w-[380px]">
@@ -52,10 +53,10 @@ const Card = ({destination}) => {
 
         {/* Action Link */}
         <div className="pt-2">
-          <button className="flex items-center gap-1 text-[#15A1BF] font-bold text-sm hover:underline uppercase tracking-wide">
+          <Link href={`Destination/${destination._id}`} ><button className="flex items-center gap-1 text-[#15A1BF] font-bold text-sm hover:underline uppercase tracking-wide">
             Book Now
             <HiArrowUpRight className="w-4 h-4" />
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>

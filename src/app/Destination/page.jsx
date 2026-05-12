@@ -4,7 +4,7 @@ import Card from '../Components/Card/Card';
 const Destinations = async() => {
     const res=await fetch('http://localhost:5000/destination')
     const data=await res.json();
-    console.log(data)
+   
     return (
   <div className='container mx-auto px-4 mt-30 mb-10'>
             {/* Header Section (Matching Figma Style) */}
