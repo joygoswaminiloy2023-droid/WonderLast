@@ -89,7 +89,7 @@ const DetailsCard = ({ details }) => {
           <div className="flex gap-4 items-center">
             <button
               onClick={() => setIsEditModalOpen(true)}
-              className="border border-[#e5e5e5] px-6 py-2.5 rounded-xl flex items-center gap-2 text-[14px] bg-white shadow-sm hover:bg-gray-50 transition font-bold text-gray-700"
+              className="border cursor-pointer border-[#e5e5e5] px-6 py-2.5 rounded-xl flex items-center gap-2 text-[14px] bg-white shadow-sm hover:bg-gray-50 transition font-bold text-gray-700"
             >
               <Pencil size={16} />
               Edit
@@ -97,7 +97,7 @@ const DetailsCard = ({ details }) => {
 
             <button 
               onClick={() => setIsDeleteOpen(true)}
-              className="border border-[#ffb3b3] text-[#ff5a5a] px-6 py-2.5 rounded-xl flex items-center gap-2 text-[14px] bg-white shadow-sm hover:bg-red-50 transition font-bold"
+              className="border cursor-pointer border-[#ffb3b3] text-[#ff5a5a] px-6 py-2.5 rounded-xl flex items-center gap-2 text-[14px] bg-white shadow-sm hover:bg-red-50 transition font-bold"
             >
               <Trash2 size={16} />
               Delete
