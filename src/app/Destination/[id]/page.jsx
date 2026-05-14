@@ -10,7 +10,7 @@ const details= await res.json()
 
     return (
         <div>
-            <DetailsCard key={id} details={details}></DetailsCard>
+            <DetailsCard  details={details}></DetailsCard>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import { Separator } from "@heroui/react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -17,13 +18,15 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row">
-          <button className="cursor-pointer bg-cyan-500 px-6 py-3 text-sm font-medium uppercase transition hover:bg-cyan-600 md:text-base">
+          <Link href="/Destination"><button className="cursor-pointer bg-cyan-500 px-6 py-3 text-sm font-medium uppercase transition hover:bg-cyan-600 md:text-base">
             Explore Now
-          </button>
+          </button></Link>
 
-          <button className="cursor-pointer bg-white/40 px-6 py-3 text-sm font-medium uppercase backdrop-blur-sm transition hover:bg-white/60 md:text-base">
-            View Destination
+          <Link href="/Add-destination">
+          <button  className="cursor-pointer bg-white/40 px-6 py-3 text-sm font-medium uppercase backdrop-blur-sm transition hover:bg-white/60 md:text-base">
+            Add Destination
           </button>
+          </Link>
         </div>
       </div>
 

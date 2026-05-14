@@ -4,12 +4,12 @@ import React from 'react';
 import { HiOutlineCalendar, HiOutlineLocationMarker, HiStar } from 'react-icons/hi';
 import { HiArrowUpRight } from 'react-icons/hi2';
 
-const Card = ({destination,id}) => {
+const Card = ({destination}) => {
     return (
 
-    <div className="bg-white rounded-lg overflow-hidden group w-full max-w-[380px]">
+    <div className="bg-white rounded-lg overflow-hidden group w-full max-w-95">
       {/* Image Container */}
-      <div className="relative h-[240px] w-full overflow-hidden">
+      <div className="relative h-60 w-full overflow-hidden">
         <Image
         width={400}
         height={400}
@@ -53,7 +53,7 @@ const Card = ({destination,id}) => {
 
         {/* Action Link */}
         <div className="pt-2">
-          <Link href={`Destination/${destination._id}`} ><button className="flex items-center gap-1 text-[#15A1BF] font-bold text-sm hover:underline uppercase tracking-wide">
+          <Link href={`Destination/${destination._id}`} ><button className="cursor-pointer flex items-center gap-1 text-[#15A1BF] font-bold text-sm hover:underline uppercase tracking-wide">
             Book Now
             <HiArrowUpRight className="w-4 h-4" />
           </button></Link>

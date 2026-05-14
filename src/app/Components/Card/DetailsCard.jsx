@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import { toast } from "react-toastify";
 import { redirect, useRouter } from "next/navigation";
+import Booknow from "./Booknow";
 
 const DetailsCard = ({ details }) => {
   const router = useRouter();
@@ -106,7 +107,7 @@ const DetailsCard = ({ details }) => {
         </div>
 
         {/* Hero Image Section */}
-        <div className="w-full h-[550px] rounded-[3rem] overflow-hidden mb-12 shadow-2xl border-[12px] border-white relative">
+        <div className="w-full h-137.5 rounded-[3rem] overflow-hidden mb-12 shadow-2xl border-12 border-white relative">
           <Image
             width={1400}
             height={800}
@@ -155,7 +156,7 @@ const DetailsCard = ({ details }) => {
               <h2 className="text-3xl font-black mb-8 text-gray-900 tracking-tight">Highlights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {facilities?.map((item, index) => (
-                  <div key={index} className="flex items-center gap-5 p-5 rounded-[2rem] bg-gray-50 border border-gray-100 group hover:bg-white hover:shadow-md transition-all duration-300">
+                  <div key={index} className="flex items-center gap-5 p-5 rounded-4xl bg-gray-50 border border-gray-100 group hover:bg-white hover:shadow-md transition-all duration-300">
                     <div className="bg-[#1E9E35] p-2 rounded-full text-white shadow-lg shadow-green-100 group-hover:scale-110 transition-transform">
                       <Check size={18} strokeWidth={4} />
                     </div>
@@ -167,40 +168,13 @@ const DetailsCard = ({ details }) => {
           </div>
 
           {/* Sticky Booking Sidebar */}
-          <div className="relative">
-            <div className="sticky top-10 space-y-6">
-              <div className="bg-[#15A1BF] text-white rounded-[3.5rem] p-12 shadow-2xl shadow-[#15A1BF]/40 border-t border-white/20">
-                <p className="text-blue-100/60 text-xs font-black mb-1 uppercase tracking-[0.3em]">Total Experience</p>
-                <div className="flex items-baseline gap-2 mb-10">
-                  <span className="text-7xl font-black tracking-tighter">${price}</span>
-                  <span className="text-blue-100/70 font-bold text-lg">/pax</span>
-                </div>
-                
-                <div className="space-y-4 mb-10">
-                    <div className="bg-white/10 rounded-3xl p-6 border border-white/10 backdrop-blur-sm">
-                        <p className="text-[11px] text-blue-100/50 font-black uppercase tracking-widest mb-1">Departure</p>
-                        <p className="text-2xl font-black">{departureDate}</p>
-                    </div>
-                </div>
-
-                <button className="w-full bg-white text-[#15A1BF] py-6 rounded-[2rem] flex items-center justify-center gap-4 font-black text-2xl hover:bg-gray-50 transition active:scale-[0.98] shadow-xl shadow-black/10 group">
-                  Book Now
-                  <ArrowRight size={28} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-              
-              <div className="bg-white border border-gray-100 rounded-[2.5rem] p-8 text-center">
-                  <p className="text-gray-400 font-bold text-sm uppercase tracking-widest">Need help with booking?</p>
-                  <p className="text-gray-900 font-black text-lg mt-1 underline">Contact Support</p>
-              </div>
-            </div>
-          </div>
+         <Booknow details={details}></Booknow>
         </div>
       </div>
 
       {/* --- CENTERED DELETE MODAL (PURE TAILWIND) --- */}
       {isDeleteOpen && (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-1000 flex items-center justify-center p-4">
           <div 
             className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-500" 
             onClick={() => setIsDeleteOpen(false)} 
@@ -235,7 +209,7 @@ const DetailsCard = ({ details }) => {
 
       {/* --- CENTERED EDIT MODAL --- */}
       {isEditModalOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-999 flex items-center justify-center p-4">
           <div 
             className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-500" 
             onClick={() => setIsEditModalOpen(false)} 
@@ -260,37 +234,37 @@ const DetailsCard = ({ details }) => {
                 <input
                   name="destinationName"
                   defaultValue={destinationName}
-                  className="w-full bg-gray-50 border-2 border-transparent rounded-[1.5rem] p-5 focus:bg-white focus:border-[#15A1BF] focus:ring-0 transition font-black text-xl text-gray-800"
+                  className="w-full bg-gray-50 border-2 border-transparent rounded-3xl p-5 focus:bg-white focus:border-[#15A1BF] focus:ring-0 transition font-black text-xl text-gray-800"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Country</label>
-                  <input name="country" defaultValue={country} className="w-full bg-gray-50 border-2 border-transparent rounded-[1.5rem] p-5 font-bold text-gray-800" />
+                  <input name="country" defaultValue={country} className="w-full bg-gray-50 border-2 border-transparent rounded-3xl p-5 font-bold text-gray-800" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Price ($)</label>
-                  <input name="price" type="number" defaultValue={price} className="w-full bg-gray-50 border-2 border-transparent rounded-[1.5rem] p-5 font-bold text-gray-800" />
+                  <input name="price" type="number" defaultValue={price} className="w-full bg-gray-50 border-2 border-transparent rounded-3xl p-5 font-bold text-gray-800" />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Trip Overview</label>
-                <textarea rows={4} name="description" defaultValue={description} className="w-full bg-gray-50 border-2 border-transparent rounded-[1.5rem] p-5 font-medium text-gray-600 resize-none" />
+                <textarea rows={4} name="description" defaultValue={description} className="w-full bg-gray-50 border-2 border-transparent rounded-3xl p-5 font-medium text-gray-600 resize-none" />
               </div>
 
               <div className="flex gap-4 pt-6">
                 <button
                   type="button"
                   onClick={() => setIsEditModalOpen(false)}
-                  className="flex-1 py-5 border-2 border-gray-100 rounded-[2rem] font-black text-gray-400 hover:bg-gray-50 transition"
+                  className="flex-1 py-5 border-2 border-gray-100 rounded-4xl font-black text-gray-400 hover:bg-gray-50 transition"
                 >
                   Discard
                 </button>
                 <button
                   type="submit"
-                  className="flex-[2] py-5 bg-[#15A1BF] text-white rounded-[2rem] font-black text-xl hover:bg-[#0f8ea8] shadow-xl shadow-[#15A1BF]/30 transition active:scale-95"
+                  className="flex-2 py-5 bg-[#15A1BF] text-white rounded-4xl font-black text-xl hover:bg-[#0f8ea8] shadow-xl shadow-[#15A1BF]/30 transition active:scale-95"
                 >
                   Apply Changes
                 </button>
