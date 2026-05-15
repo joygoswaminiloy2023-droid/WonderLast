@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="bg-[url('/assets/Banner.png')] bg-cover bg-center text-white flex flex-col justify-between min-h-screen">
+    <div className="bg-[url('/assets/Banner.png')] bg-cover bg-center text-white flex flex-col justify-between min-h-screen mb-5">
 
       {/* Hero Content */}
       <div className="flex flex-1 flex-col items-center justify-center gap-6 px-5 pt-28 pb-10 text-center md:px-10">
