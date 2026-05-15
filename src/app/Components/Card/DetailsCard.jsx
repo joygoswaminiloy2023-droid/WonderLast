@@ -8,7 +8,6 @@ import {
   Star,
   CalendarDays,
   Check,
-  ArrowRight,
   X,
   AlertTriangle
 } from "lucide-react";
@@ -81,7 +80,7 @@ const DetailsCard = ({ details }) => {
         <div className="flex items-center justify-between mb-8">
           <button 
             onClick={() => router.back()} 
-            className="flex items-center gap-2 text-[#777] text-[15px] hover:text-black transition font-medium"
+            className="flex bg-cyan-500 cursor-pointer text-white items-center gap-2 rounded-2xl p-2 text-[15px] hover:text-black transition font-medium"
           >
             <ArrowLeft size={18} />
             Back to Destinations
@@ -128,7 +127,7 @@ const DetailsCard = ({ details }) => {
                 <MapPin size={16} />
                 {country}
               </div>
-              <h1 className="text-7xl font-black text-gray-900 leading-[1.1] tracking-tight">
+              <h1 className="text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
                 {destinationName}
               </h1>
               <div className="flex items-center gap-8 pt-2">
@@ -145,22 +144,22 @@ const DetailsCard = ({ details }) => {
 
             {/* Overview Section */}
             <section className="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100/50">
-              <h2 className="text-3xl font-black mb-6 text-gray-900 tracking-tight">Overview</h2>
+              <h2 className="text-2xl font-black mb-6 text-gray-900 tracking-tight">Overview</h2>
               <p className="text-xl leading-relaxed text-gray-500 font-medium">
                 {description}
               </p>
             </section>
 
             {/* Highlights Section */}
-            <section className="bg-white p-12 rounded-[3rem] shadow-sm border border-gray-100/50">
-              <h2 className="text-3xl font-black mb-8 text-gray-900 tracking-tight">Highlights</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <section>
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">Highlights</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {facilities?.map((item, index) => (
-                  <div key={index} className="flex items-center gap-5 p-5 rounded-4xl bg-gray-50 border border-gray-100 group hover:bg-white hover:shadow-md transition-all duration-300">
-                    <div className="bg-[#1E9E35] p-2 rounded-full text-white shadow-lg shadow-green-100 group-hover:scale-110 transition-transform">
-                      <Check size={18} strokeWidth={4} />
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="text-emerald-500">
+                      <Check size={20} strokeWidth={3} />
                     </div>
-                    <span className="font-bold text-gray-700 text-lg">{item}</span>
+                    <span className="text-gray-700 font-medium">{item}</span>
                   </div>
                 ))}
               </div>
