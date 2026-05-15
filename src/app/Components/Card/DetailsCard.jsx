@@ -18,6 +18,7 @@ import Booknow from "./Booknow";
 
 const DetailsCard = ({ details }) => {
   const router = useRouter();
+  console.log(details)
   
   // Standard React state for reliability in Next.js 16/Turbopack
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -35,7 +36,7 @@ const DetailsCard = ({ details }) => {
     const data = new FormData(e.currentTarget);
     const updated_data = Object.fromEntries(data.entries());
 
-    const res = await fetch(`http://localhost:5000/destination/${_id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${_id}`, {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(updated_data)
@@ -53,7 +54,7 @@ const DetailsCard = ({ details }) => {
 
   // --- Delete Handler ---
   const handleDelete = async () => {
- const res=await fetch(`http://localhost:5000/destination/${_id}`,{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination/${_id}`,{
   method:"DELETE",
   headers:{
     'content-type': 'application/json'

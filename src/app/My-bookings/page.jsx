@@ -15,7 +15,7 @@ const Mybookings = async () => {
     // Safety check for session
     if (!User) return <div className="pt-40 text-center">Please login to view bookings.</div>;
 
-    const res = await fetch(`http://localhost:5000/bookings/${User.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${User.id}`, {
         cache: 'no-store'
     })
     const data = await res.json()

@@ -20,7 +20,7 @@ const page =() => {
  const des_data=Object.fromEntries(data.entries())
 console.log(des_data);
 
-const res= await fetch('http://localhost:5000/destination',{
+const res= await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/destination`,{
 method: 'POST',
 headers:{
 'content-type': 'application/json'
