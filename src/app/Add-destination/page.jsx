@@ -9,10 +9,16 @@ import {
   TextArea,
   Button,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
+
 import React from "react";
 import { HiCheck, HiChevronDown } from "react-icons/hi";
+import { toast } from "react-toastify";
+
 
 const page =() => {
+  const router = useRouter();
+
   const onsubmit = async (e) => {
  e.preventDefault();
  const data=new FormData(e.currentTarget)
@@ -25,9 +31,17 @@ method: 'POST',
 headers:{
 'content-type': 'application/json'
 },
+
 body: JSON.stringify(des_data)
 
 })
+
+if (res.ok) {
+        toast.success("Destination added successfully!"); 
+        router.push("/Destination"); 
+      } else {
+        toast.error("Failed to add destination. Please try again."); 
+      }
   };
 
   const inputClass =
